@@ -1,5 +1,4 @@
 function trendingMovies() {
-    const url = 'https://api.themoviedb.org/3/trending/movie/{time_window}';
     const btn = document.querySelector("#next_page")
 
     const options = {
@@ -10,11 +9,34 @@ function trendingMovies() {
         }
       };
       
-      fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)
+      fetch('https://api.themoviedb.org/3/trending/movie/day?language=fr-FR', options)
         .then(response => response.json())
-        .then(response => console.log(response))
+        .then(response => {
+            let divMovie = document.querySelector("#result");
+            response.results.forEach(element => {
+                newDiv = document.createElement("div");
+                newDiv.className = "movie";
+                newDiv.innerHTML = `
+                
+                  <img src = "https://image.tmdb.org/t/p/w200/${element.poster_path}">
+                  <h1>${element.title}</h1>
+                  <h4>${element.release_date}</h4>
+                  <a href="movie.html">Voir plus</a>
+                `;
+                divMovie.appendChild(newDiv);
+            });
+            if (response.next) {
+              btn.style.display = 'block';
+              btn.addEventListener('click', () => {
+                  newDiv.innerHTML = '';
+                  fetchPeople(response.next);
+              })
+          } else {
+              btn.style.display = 'none';
+          }
+        })
         .catch(err => console.error(err))
-
+          
 }
 
 trendingMovies()
