@@ -1,5 +1,5 @@
 function trendFilms () {
-    //const btn = document.querySelector('#ex_03_next_page');
+    const btn = document.querySelector('#next_page');
     const list = document.querySelector('#filmList');
     const url = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US';
 
