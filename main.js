@@ -1,7 +1,8 @@
 let page = 1
 const btn = document.querySelector("#next_page")
       btn.style.display = 'block';
-      btn.addEventListener('click', () => page++; movies())
+      btn.addEventListener('click', () => {
+         page++; trendingMovies()})
       
 
 function trendingMovies() {
