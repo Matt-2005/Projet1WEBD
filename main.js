@@ -1,5 +1,10 @@
+let page = 1
+const btn = document.querySelector("#next_page")
+      btn.style.display = 'block';
+      btn.addEventListener('click', () => page++; movies())
+      
+
 function trendingMovies() {
-    const btn = document.querySelector("#next_page")
 
     const options = {
         method: 'GET',
@@ -9,7 +14,7 @@ function trendingMovies() {
         }
       };
       
-      fetch('https://api.themoviedb.org/3/trending/movie/day?language=fr-FR&page=', options)
+      fetch('https://api.themoviedb.org/3/trending/movie/day?language=fr-FR&page='+ page, options)
         .then(response => response.json())
         .then(response => {
             let divMovie = document.querySelector("#result");
@@ -25,15 +30,6 @@ function trendingMovies() {
                 `;
                 divMovie.appendChild(newDiv);
             });
-            if (response.next) {
-              btn.style.display = 'block';
-              btn.addEventListener('click', () => {
-                  newDiv.innerHTML = '';
-                  fetchPeople(response.next);
-              })
-          } else {
-              btn.style.display = 'none';
-          }
         })
         .catch(err => console.error(err))
           
