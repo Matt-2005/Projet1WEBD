@@ -1,6 +1,4 @@
 function movieDetails() {
-    const movie_id = document.
-
     const options = {
         method: 'GET',
         headers: {
@@ -9,13 +7,11 @@ function movieDetails() {
         }
       };
       
-      fetch('https://api.themoviedb.org/3/movie/movie_id?language=fr-FR', options)
+      fetch('https://api.themoviedb.org/3/movie/movie_id?language=en-US', options)
         .then(response => response.json())
         .then(response => {
             let divDetail = document.querySelector("#detail");
-            response.results. => {
-
-            }
+            
         })
         .catch(err => console.error(err));
 

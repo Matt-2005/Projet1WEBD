@@ -3,6 +3,8 @@ const btn = document.querySelector("#next_page")
       btn.style.display = 'block';
       btn.addEventListener('click', () => {
          page++; trendingMovies()})
+
+let ID = []
       
 
 function trendingMovies() {
@@ -27,7 +29,7 @@ function trendingMovies() {
                   <img src = "https://image.tmdb.org/t/p/w200/${element.poster_path}">
                   <h1>${element.title}</h1>
                   <h4>${element.release_date}</h4>
-                  <a href="movie.html">Voir plus</a>
+                  <a href="movie.html?id=${element.id}">Voir plus</a>
                 `;
                 divMovie.appendChild(newDiv);
             });
