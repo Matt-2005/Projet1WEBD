@@ -3,8 +3,6 @@ const btn = document.querySelector("#next_page")
       btn.style.display = 'block';
       btn.addEventListener('click', () => {
          page++; trendingMovies()})
-
-let ID = []
       
 
 function trendingMovies() {
