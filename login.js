@@ -9,46 +9,46 @@ function loginForm() {
 
 
     fetch(`https://api.themoviedb.org/3/authentication/token/new`, options)
-    .then(response => response.json())
-    .then(response => {
-        let token = response.request_token;
-        console.log(token);
+        .then(response => response.json())
+        .then(response => {
+            let token = response.request_token;
+            console.log(token);
 
-        let loginForm = document.getElementById('loginForm');
+            let loginForm = document.getElementById('loginForm');
 
-        loginForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-    
-            let username = document.getElementById('Email').value;
-            let password = document.getElementById('Password').value;
-    
-            let options = {
-                method: 'POST',
-                Headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    username: username,
-                    password: password
-                })
-            };
-            console.log(options);
-            fetch(`https://api.themoviedb.org/3/authentication/session/new`)
-                .then(response => response.json())
-                .then(response => {
-                    console.log(response);
-                })
-    
-    
-    
+            loginForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+        
+                let username = document.getElementById('Email').value;
+                let password = document.getElementById('Password').value;
+        
+                let options = {
+                    method: 'POST',
+                    Headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: username,
+                        password: password
+                    })
+                };
+                console.log(options);
+                fetch(`https://api.themoviedb.org/3/authentication/session/new`)
+                    .then(response => response.json())
+                    .then(response => {
+                        console.log(response);
+                    })
+        
+        
+        
+            })
+
+
+
+
+
         })
-
-
-
-
-
-    })
-    .catch(err => console.error(err));
+        .catch(err => console.error(err));
 
 
 }
