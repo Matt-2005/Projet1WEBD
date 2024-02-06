@@ -1,4 +1,4 @@
-let movieId = 0
+movieId = 0;
 
 function movieDetails(movieId) {
   const options = {
@@ -9,17 +9,17 @@ function movieDetails(movieId) {
       }
     };
     
-    fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US', options`)
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, options)
     .then(response => response.json())
         .then(movie => {
             let divDetail = document.querySelector("#detail");
             let newDiv = document.createElement("div");
             newDiv.className = "movie";
             newDiv.innerHTML = `
+            
                 <img src="https://image.tmdb.org/t/p/w200/${movie.poster_path}">
                 <h1>${movie.title}</h1>
                 <h4>${movie.release_date}</h4>
-                <a href="movie.html?id=${movie.id}">Voir plus</a>
             `;
             divDetail.appendChild(newDiv);
         })
