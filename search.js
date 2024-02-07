@@ -17,7 +17,7 @@ function movieResearch() {
           divResearch.innerHTML = "";
           response.results.forEach(movie => {
               let newDiv = document.createElement("div");
-              newDiv.className = "movie";
+              newDiv.className = "movieSearch";
               newDiv.innerHTML = `
                 <img src = "https://image.tmdb.org/t/p/w200/${movie.poster_path}">
                 <h2>${movie.title}</h2>
