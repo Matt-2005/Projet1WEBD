@@ -30,14 +30,7 @@ function movieResearch() {
                 <a href="movie.html?id=${movie.id}">Voir plus</a>
               `;
               divResearch.appendChild(newDiv);
-          });
-          document.querySelectorAll('.view-more').forEach(link => {
-            link.addEventListener('click', (event) => {
-                event.preventDefault();
-                const movieId = link.dataset.id;
-                movieDetails(movieId);
-            });
-        });
+          })
       })
       .catch(err => console.error(err));
 
