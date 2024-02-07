@@ -13,7 +13,7 @@ function loginForm() {
         .then(response => {
             let token = response.request_token;
             console.log(token);
-            window.location.href = `https://www.themoviedb.org/authenticate/${token}?redirect_to=http://127.0.0.1:5500/login2.html`;
+            window.location.href = `https://www.themoviedb.org/authenticate/${token}?redirect_to=http://127.0.0.1:5500/index.html`;
             })
         .catch(err => console.error(err));
 
