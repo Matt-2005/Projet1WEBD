@@ -13,41 +13,8 @@ function loginForm() {
         .then(response => {
             let token = response.request_token;
             console.log(token);
-
-            let loginForm = document.getElementById('loginForm');
-
-            loginForm.addEventListener('submit', function (event) {
-                event.preventDefault();
-        
-                let username = document.getElementById('Email').value;
-                let password = document.getElementById('Password').value;
-        
-                let options = {
-                    method: 'POST',
-                    Headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        username: username,
-                        password: password
-                    })
-                };
-                console.log(options);
-                fetch(`https://api.themoviedb.org/3/authentication/session/new`)
-                    .then(response => response.json())
-                    .then(response => {
-                        console.log(response);
-                    })
-        
-        
-        
+            window.location.href = `https://www.themoviedb.org/authenticate/${token}?redirect_to=http://127.0.0.1:5500/login2.html`;
             })
-
-
-
-
-
-        })
         .catch(err => console.error(err));
 
 

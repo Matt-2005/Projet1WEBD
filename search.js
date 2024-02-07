@@ -8,7 +8,7 @@ function movieResearch() {
         }
       };
       
-      fetch('https://api.themoviedb.org/3/search/movie?query=django&include_adult=false&language=en-US&page=1', options)
+      fetch('https://api.themoviedb.org/3/search/movie', options)
         .then(response => response.json())
         .then(response => {
             let divResearch = document.querySelector("#research");
