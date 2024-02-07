@@ -9,34 +9,33 @@
 
 </head>
 <body>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">YourCinema</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="movie.html">Films</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="search.html">Rechercher un film</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">Se connecter</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <label>Recherche
-      <select onchange="movieResearch()">
-      </select>
-    </label>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Le Sch-Inema</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="search.html">Recherche</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Authentification</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <div id="search-bar">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
     <script src="search.js"></script>
     
 </body>
