@@ -1,6 +1,6 @@
 function movieResearch() {
 
-    const query = document.querySelector("#searchInput").value;
+    const query = document.querySelector("#user-research").value;
 
     const options = {
         method: 'GET',
@@ -29,4 +29,7 @@ function movieResearch() {
 
 }
 
-movieResearch()
+document.querySelector("form").addEventListener("submit", function(event) {
+  event.preventDefault();
+  movieResearch();
+});
