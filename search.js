@@ -37,7 +37,7 @@ function movieResearch() {
 
 }
 
-document.querySelector("form").addEventListener("submit", function(event) {
+document.querySelector("form").addEventListener("input", function(event) {
   event.preventDefault();
   movieResearch();
 });
