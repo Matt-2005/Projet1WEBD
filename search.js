@@ -1,3 +1,9 @@
+let page = 1
+const btn = document.querySelector("#next_page_search")
+      btn.style.display = 'block';
+      btn.addEventListener('click', () => {
+         page++; movieResearch()})
+
 function movieResearch() {
 
     const query = document.querySelector("#user-research").value;
@@ -10,7 +16,7 @@ function movieResearch() {
         }
       };
       
-      fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=1`, options)
+      fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=`+ page, options)
       .then(response => response.json())
       .then(response => {
           let divResearch = document.querySelector("#research");
@@ -24,20 +30,13 @@ function movieResearch() {
                 <a href="movie.html?id=${movie.id}">Voir plus</a>
               `;
               divResearch.appendChild(newDiv);
-          });
-          document.querySelectorAll('.view-more').forEach(link => {
-            link.addEventListener('click', (event) => {
-                event.preventDefault();
-                const movieId = link.dataset.id;
-                movieDetails(movieId);
-            });
-        });
+          })
       })
       .catch(err => console.error(err));
 
 }
 
-document.querySelector("form").addEventListener("submit", function(event) {
+document.querySelector("form").addEventListener("input", function(event) {
   event.preventDefault();
   movieResearch();
 });
