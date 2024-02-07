@@ -21,9 +21,17 @@ function movieResearch() {
               newDiv.innerHTML = `
                 <img src = "https://image.tmdb.org/t/p/w200/${movie.poster_path}">
                 <h2>${movie.title}</h2>
+                <a href="movie.html?id=${movie.id}">Voir plus</a>
               `;
               divResearch.appendChild(newDiv);
           });
+          document.querySelectorAll('.view-more').forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const movieId = link.dataset.id;
+                movieDetails(movieId);
+            });
+        });
       })
       .catch(err => console.error(err));
 

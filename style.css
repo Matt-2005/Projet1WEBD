@@ -4,9 +4,22 @@
     box-sizing: border-box;
 }
 
+#navbar{
+    background-color: red;
+}
+
+.logopop {
+    margin-left: auto;
+}
+
+.logopop img{
+    width: 100px;
+}
+
 #result{
     display: flex;
     flex-wrap: wrap;
+    background-color: lightgrey;
 }
 
 .movie{
